@@ -1,31 +1,39 @@
 <template>
   <div id="app">
 
-    <Header />
+    <!-- HEADER sans navbar -->
+    <img alt="logo canapé rouge" src="./assets/logo-canape.png">
+    <h4 class="text-white mb-5">Le repaire des couch potatoes</h4>
+
+    <!-- Si affichage ACCUEIL ======================================================= -->
     <div v-if="$route.path == '/'">
-      <img alt="Vue logo" src="./images/logo-canape.jpg">
-      <AccueilComp msg="Qu'est-ce qu'on regarde ce soir ?" />
+      <HeaderTemp />
+      <FilmsListe />
     </div>
 
+    <!-- Si affichage ACCUEIL ======================================================= -->
+    <div v-if="$route.path == '/FilmsFR'">
+      <FilmsFR />
+    </div>
 
-    <Footer />
   </div>
 </template>
 
 <script>
-import AccueilComp from './components/AccueilComp.vue'
+import FilmsListe from './components/utils/FilmsListe.vue'
+import HeaderTemp from './components/templates/HeaderTemp.vue'
 
 export default {
-  name: 'App',
+  name: 'app',
   components: {
-    AccueilComp
+    FilmsListe
   }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Kanit, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
