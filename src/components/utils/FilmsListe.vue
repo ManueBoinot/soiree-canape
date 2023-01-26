@@ -11,7 +11,7 @@
 
         <div v-else class="row">
             <div class="col-sm-6 col-md-4 col-xl-3 col-xxl-2 mx-auto" v-for="film in films" v-bind:key=film.id>
-                <router-link v-bind:to="'film-detail/' + film.id" class="text-decoration-none">
+                <router-link v-bind:to="'fiche-film?id=' + film.id" class="text-decoration-none">
                     <div class="card mb-3 text-bg-light" style="height: 500px">
 
                         <!-- AFFICHE FILM -->

@@ -2,7 +2,7 @@ import App from "./App.vue";
 import FilmsFR from "./components/FilmsFR.vue"
 import FilmsUS from "./components/FilmsUS.vue"
 import TopRated from "./components/TopRated.vue"
-import FilmDetail from "./components/FilmDetail.vue"
+import FicheFilm from "./components/FicheFilm.vue"
 import BoxOffice from "./components/BoxOffice.vue"
 import RechercheFilm from "./components/RechercheFilm.vue"
 import { createWebHistory, createRouter } from "vue-router";
@@ -13,7 +13,7 @@ const routes = [
     { path: '/films-FR', component: FilmsFR },
     { path: '/films-US', component: FilmsUS },
     { path: '/top-rated', component: TopRated },
-    { path: '/film-detail/:id', component: FilmDetail },
+    { path: '/fiche-film', component: FicheFilm },
     { path: '/box-office', component: BoxOffice },
     { path: '/rechercher', component: RechercheFilm },
 ]

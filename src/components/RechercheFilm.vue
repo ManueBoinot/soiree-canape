@@ -1,11 +1,10 @@
 <template>
-    <div v-if="$route.path == '/rechercher'">
-        <div class="container-fluid text-white">
-            <h1 class="fw-bold">RECHERCHER UN FILM</h1>
-            <h3 class="mb-4">Par titre (version française)</h3>
-            <input type="text" class="w-100 p-2 mb-5" style="max-width: 600px;" v-model="query" @keyup="search(query)" placeholder="Tapez le titre du film recherché"/>
-            <FilmsListe v-bind:films="films" v-bind:errored="errored" v-bind:loading="loading" />
-        </div>
+    <div class="container-fluid text-white">
+        <h1 class="fw-bold">RECHERCHER UN FILM</h1>
+        <h3 class="mb-4">Par titre (version française)</h3>
+        <input type="text" class="w-100 p-2 mb-5" style="max-width: 600px;" v-model="query" @keyup="search(query)"
+            placeholder="Tapez le titre du film recherché" />
+        <FilmsListe v-bind:films="films" v-bind:errored="errored" v-bind:loading="loading" />
     </div>
 </template>
 

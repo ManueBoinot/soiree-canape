@@ -1,10 +1,8 @@
 <template>
-  <div v-if="$route.path == '/films-FR'">
-    <div class="container-fluid text-white">
-      <h1 class="fw-bold">FILMS FRANÇAIS</h1>
-      <h3 class="mb-5">Les 40 films français les plus populaires</h3>
-      <FilmsListe v-bind:films="films" v-bind:errored="errored" v-bind:loading="loading" />
-    </div>
+  <div class="container-fluid text-white">
+    <h1 class="fw-bold">FILMS FRANÇAIS</h1>
+    <h3 class="mb-5">Les 40 films français les plus populaires</h3>
+    <FilmsListe v-bind:films="films" v-bind:errored="errored" v-bind:loading="loading" />
   </div>
 </template>
 

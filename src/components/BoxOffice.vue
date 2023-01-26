@@ -1,10 +1,8 @@
 <template>
-  <div v-if="$route.path == '/box-office'">
-    <div class="container-fluid text-white">
-      <h1 class="fw-bold">BOX OFFICE</h1>
-      <h3 class="mb-5">Les dernières sorties</h3>
-      <FilmsListe v-bind:films="films" v-bind:errored="errored" v-bind:loading="loading" />
-    </div>
+  <div class="container-fluid text-white">
+    <h1 class="fw-bold">BOX OFFICE</h1>
+    <h3 class="mb-5">Les dernières sorties</h3>
+    <FilmsListe v-bind:films="films" v-bind:errored="errored" v-bind:loading="loading" />
   </div>
 </template>
 
