@@ -7,7 +7,6 @@
 
     <!-- Si affichage ACCUEIL ======================================================= -->
     <div v-if="$route.path == '/'">
-      <h1 class="text-white fw-bold">POPULAIRES EN CE MOMENT</h1>
       <FilmsListe v-bind:films="films" v-bind:errored="errored" v-bind:loading="loading" />
     </div>
 
@@ -24,6 +23,7 @@
 
 <script>
 import FilmsListe from './components/utils/FilmsListe.vue'
+// import FilmsListeAccueil from './components/utils/FilmsListeAccueil.vue'
 import HeaderTemp from './components/templates/HeaderTemp.vue'
 import FooterTemp from './components/templates/FooterTemp.vue'
 import axios from 'axios'
@@ -31,6 +31,7 @@ import axios from 'axios'
 export default {
   name: 'app',
   components: {
+    // FilmsListeAccueil,
     FilmsListe,
     HeaderTemp,
     FooterTemp,

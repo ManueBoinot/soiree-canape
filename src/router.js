@@ -4,6 +4,7 @@ import FilmsUS from "./components/FilmsUS.vue"
 import TopRated from "./components/TopRated.vue"
 import FilmDetail from "./components/FilmDetail.vue"
 import BoxOffice from "./components/BoxOffice.vue"
+import RechercheFilm from "./components/RechercheFilm.vue"
 import { createWebHistory, createRouter } from "vue-router";
 
 // Création des routes
@@ -14,6 +15,7 @@ const routes = [
     { path: '/top-rated', component: TopRated },
     { path: '/film-detail/:id', component: FilmDetail },
     { path: '/box-office', component: BoxOffice },
+    { path: '/rechercher', component: RechercheFilm },
 ]
 
 // Intégration des routes à ROUTER pour création de fausses URL et navigation en Single Page

@@ -31,13 +31,8 @@
                     <li class="nav-item">
                         <router-link class="nav-link" to="/box-office">Box Office</router-link>
                     </li>
-                    <li class="align-self-center">
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Rechercher..."
-                                aria-label="Search">
-                            <button class="btn btn-outline-light" type="submit"><i
-                                    class="fa-solid fa-magnifying-glass"></i></button>
-                        </form>
+                    <li class="nav-item">
+                        <router-link class="nav-link" to="/rechercher">RECHERCHER</router-link>
                     </li>
                 </ul>
             </div>

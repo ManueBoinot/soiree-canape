@@ -37,8 +37,9 @@
                         </div>
 
                         <!-- AFFICHE FILM -->
-                        <img v-bind:src="preUrl + film.poster_path" alt="moviePoster" class="card-img-top"
-                            style="object-fit: contain; height: 300px;">
+                        <div class="img-fluid"><img v-bind:src="preUrl + film.poster_path" alt="moviePoster"
+                                class="card-img-top" style="object-fit: contain; height: 300px;"></div>
+
 
                         <div class="card-body" style="font-size: small">
 
@@ -52,22 +53,28 @@
                             </div>
 
                             <!-- NOTE FILM -->
-                            <p class="card-text m-0" style="font-size: 1rem;"><small>Note : <span class="fw-bold">{{
-                                film.vote_average
-                            }} / 10</span> <span class="fst-italic" style="font-size: 0.7rem;">({{
+                            <div class="card-text m-0">
+                                <p style="font-size: 1rem;">Note : <span class="fw-bold">{{
+                                    film.vote_average
+                                }} / 10</span> <span class="fst-italic" style="font-size: 0.7rem;">({{
     film.vote_count
 }}
-                                        votes)</span></small></p>
+                                        votes)</span></p>
+                            </div>
+
 
                             <!-- DATE SORTIE FILM -->
-                            <p class="card-text mb-3" style="font-size: 0.8rem;"><small>(Date de sortie : <span
-                                        class="fst-italic" style="font-size: 0.7rem;"> {{
-                                            formatDate(film.release_date)
-                                        }}
-                                    </span>)</small></p>
+                            <div class="card-text mb-3">
+                                <p style="font-size: 0.8rem;"><small>(Date de sortie : <span class="fst-italic"
+                                            style="font-size: 0.7rem;"> {{
+                                                formatDate(film.release_date)
+                                            }}
+                                        </span>)</small></p>
+                            </div>
 
+                            <!-- RÉSUMÉ FILM -->
                             <div class="card-text">
-                                {{ film.overview.slice(0, 200) + '...' }}
+                                {{ film.overview.slice(0, 150) + '...' }}
                             </div>
                         </div>
                     </div>
@@ -93,7 +100,7 @@ export default {
             preUrl: "https://image.tmdb.org/t/p/original/"
         }
     },
-    
+
     methods: {
         formatDate(value) {
             return moment(value).format('Do MMMM YYYY');

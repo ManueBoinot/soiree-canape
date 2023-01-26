@@ -2,7 +2,8 @@
   <div v-if="$route.path == '/top-rated'">
     <div class="container-fluid text-white">
       <h1 class="fw-bold">TOP 50</h1>
-      <h3 class="mb-5">Classement des 50 films les mieux notés* <br> <small class="fst-italic" style="font-size: 0.8rem;">(* sur une base de 5000 votes minimum)</small></h3>
+      <h3 class="mb-5">Classement des 50 films les mieux notés* <br> <small class="fst-italic"
+          style="font-size: 0.8rem;">(* sur une base de 5000 votes minimum)</small></h3>
       <Top50Liste v-bind:films="films" v-bind:errored="errored" v-bind:loading="loading" />
     </div>
   </div>

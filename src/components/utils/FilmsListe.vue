@@ -12,7 +12,7 @@
         <div v-else class="row">
             <div class="col-sm-6 col-md-4 col-xl-3 col-xxl-2 mx-auto" v-for="film in films" v-bind:key=film.id>
                 <router-link v-bind:to="'film-detail/' + film.id" class="text-decoration-none">
-                    <div class="card mb-3 text-bg-light" style="height: 400px">
+                    <div class="card mb-3 text-bg-light" style="height: 500px">
 
                         <!-- AFFICHE FILM -->
                         <img v-bind:src="preUrl + film.poster_path" alt="moviePoster" class="card-img-top"
@@ -21,15 +21,28 @@
                         <div class="card-body" style="font-size: small">
 
                             <!-- TITRE FILM -->
-                            <h5 class="card-title fw-bold text-uppercase" style="font-size: 0.8rem; color: #750202;">{{
-                                film.title
-                            }}</h5>
+                            <div class="card-title d-flex align-items-center justify-content-center"
+                                style="color: #750202;">
+
+                                <h5 class="fw-bold text-uppercase m-0">{{
+                                    film.title
+                                }}</h5>
+                            </div>
 
                             <!-- NOTE FILM -->
-                            <p class="card-text" style="font-size: 0.8rem;"><small>Note : {{
-                                film.vote_average
-                            }} / 10 <span class="fst-italic" style="font-size: 0.7rem;">({{ film.vote_count }}
-                                        votes)</span></small></p>
+                            <div class="card-text m-0">
+                                <p style="font-size: 1rem;">Note : <span class="fw-bold">{{
+                                    film.vote_average
+                                }} / 10</span> <span class="fst-italic" style="font-size: 0.7rem;">({{
+    film.vote_count
+}}
+                                        votes)</span></p>
+                            </div>
+
+                            <!-- RÉSUMÉ FILM -->
+                            <div class="card-text">
+                                {{ film.overview.slice(0, 150) + '...' }}
+                            </div>
                         </div>
                     </div>
                 </router-link>

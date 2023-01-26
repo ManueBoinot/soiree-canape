@@ -1,7 +1,8 @@
 <template>
     <div v-if="$route.path == '/films-US'">
-      <div class="container-fluid">
-        <h1 class="text-white fw-bold">FILMS AMÉRICAINS</h1>
+      <div class="container-fluid text-white">
+      <h1 class="fw-bold">FILMS AMÉRICAINS</h1>
+      <h3 class="mb-5">Les 40 films US les plus populaires</h3>
         <FilmsListe v-bind:films="films" v-bind:errored="errored" v-bind:loading="loading" />
       </div>
     </div>
