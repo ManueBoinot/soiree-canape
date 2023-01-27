@@ -35,7 +35,7 @@
                             <!-- NOTE FILM -->
                             <div class="card-text m-0">
                                 <p style="font-size: 1rem;">Note : <span class="fw-bold">{{
-                                    film.vote_average
+                                    film.vote_average.toFixed(1)
                                 }} / 10</span> <span class="fst-italic" style="font-size: 0.7rem;">({{
     film.vote_count
 }}

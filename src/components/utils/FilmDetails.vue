@@ -31,7 +31,7 @@
                     <!-- NOTE FILM -->
                     <div class="d-flex justify-content-center align-items-center mx-auto gap-2">
                         <p class="fw-bold">Note : </p>
-                        <p class="fs-5">{{ film.vote_average }} /
+                        <p class="fs-5">{{ film.vote_average.toFixed(1) }} /
                             10</p>
                         <p class="fst-italic">({{
                             film.vote_count
