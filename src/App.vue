@@ -7,6 +7,8 @@
 
     <!-- Si affichage ACCUEIL ======================================================= -->
     <div v-if="$route.path == '/'">
+      <h1 class="text-white fw-bold">POPULAIRES EN CE MOMENT</h1>
+      <h3 class="text-white mb-5">Les films dont tout le monde parle !</h3>
       <FilmsListe v-bind:films="films" v-bind:errored="errored" v-bind:loading="loading" />
     </div>
 

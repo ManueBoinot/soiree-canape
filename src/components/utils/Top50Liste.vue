@@ -12,29 +12,30 @@
         <div v-else class="row">
             <div class="col-sm-6 col-md-4 col-xl-3 col-xxl-2 mx-auto" v-for="(film, index) in films" v-bind:key=film.id>
                 <router-link v-bind:to="'fiche-film?id=' + film.id" class="text-decoration-none">
-                    <div class="card mb-3 text-bg-light py-2" style="height: 600px">
+                    <div class="card mb-3 text-bg-light py-2 overflow-hidden" style="height: 600px">
 
                         <!-- CLASSEMENT AU TOP 50 -->
-                        <div class="card-text py-2" v-if="index == 0">
-                            <h5 class="my-auto py-1 pe-2 bg-dark" style="font-size: 1rem; color: gold"><i
-                                    class="fa-solid fa-medal"></i> {{ index + 1}}<sup>ère</sup> place</h5>
-                        </div>
+                            <div class="card-text py-2" v-if="index == 0">
+                                <h5 class="my-auto py-1 pe-2 bg-dark" style="font-size: 1rem; color: gold"><i
+                                        class="fa-solid fa-medal"></i> {{ index + 1}}<sup>ère</sup> place</h5>
+                            </div>
 
-                        <div class="card-text py-2" v-else-if="index == 1">
-                            <h5 class="my-auto py-1 pe-2 bg-dark" style="font-size: 1rem; color: silver"><i
-                                    class="fa-solid fa-medal"></i> {{ index + 1}}<sup>nde</sup> place</h5>
-                        </div>
+                            <div class="card-text py-2" v-else-if="index == 1">
+                                <h5 class="my-auto py-1 pe-2 bg-dark" style="font-size: 1rem; color: silver"><i
+                                        class="fa-solid fa-medal"></i> {{ index + 1}}<sup>nde</sup> place</h5>
+                            </div>
 
-                        <div class="card-tex py-2" v-else-if="index == 2">
-                            <h5 class="my-auto py-1 pe-2 bg-dark" style="font-size: 1rem; color: chocolate"><i
-                                    class="fa-solid fa-medal"></i> {{ index + 1}}<sup>ème</sup> place</h5>
-                        </div>
+                            <div class="card-tex py-2" v-else-if="index == 2">
+                                <h5 class="my-auto py-1 pe-2 bg-dark" style="font-size: 1rem; color: chocolate"><i
+                                        class="fa-solid fa-medal"></i> {{ index + 1}}<sup>ème</sup> place</h5>
+                            </div>
 
-                        <div class="card-text py-2" v-else>
-                            <h5 class="my-auto py-1 pe-2 text-bg-dark" style="font-size: 1rem">{{ index +
-                            1}}<sup>ème</sup> place
-                            </h5>
-                        </div>
+                            <div class="card-text py-2" v-else>
+                                <h5 class="my-auto py-1 pe-2 text-bg-dark" style="font-size: 1rem">{{ index +
+                                1}}<sup>ème</sup> place
+                                </h5>
+                            </div>
+
 
                         <!-- AFFICHE FILM -->
                         <div class="img-fluid"><img v-bind:src="preUrl + film.poster_path" alt="moviePoster"
@@ -109,7 +110,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .card {
     transition: 0.5s;
 }

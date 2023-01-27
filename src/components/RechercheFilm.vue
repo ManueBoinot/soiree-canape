@@ -21,49 +21,7 @@ export default {
         return {
             films: [],
             query: '',
-            loading: true,
-            errored: false,
         };
-    },
-
-    mounted() {
-        axios
-            .get(`https://api.themoviedb.org/3/discover/movie?api_key=1ba19e5a213b1f39b7d58ab4aad6ebb5&language=fr&sort_by=original_title.asc&include_adult=false&include_video=false&page=1&vote_count.gte=100`)
-            .then(response => {
-                this.films = response.data.results
-                axios
-                    .get(`https://api.themoviedb.org/3/discover/movie?api_key=1ba19e5a213b1f39b7d58ab4aad6ebb5&language=fr&sort_by=original_title.asc&include_adult=false&include_video=false&page=2&vote_count.gte=100`)
-                    .then(response => {
-                        this.films = this.films.concat(response.data.results)
-                    })
-                    .catch(error => {
-                        console.log(error)
-                        this.errored = true
-                    })
-                axios
-                    .get(`https://api.themoviedb.org/3/discover/movie?api_key=1ba19e5a213b1f39b7d58ab4aad6ebb5&language=fr&sort_by=original_title.asc&include_adult=false&include_video=false&page=3&vote_count.gte=100`)
-                    .then(response => {
-                        this.films = this.films.concat(response.data.results)
-                    })
-                    .catch(error => {
-                        console.log(error)
-                        this.errored = true
-                    })
-                axios
-                    .get(`https://api.themoviedb.org/3/discover/movie?api_key=1ba19e5a213b1f39b7d58ab4aad6ebb5&language=fr&sort_by=original_title.asc&include_adult=false&include_video=false&page=4&vote_count.gte=100`)
-                    .then(response => {
-                        this.films = this.films.concat(response.data.results)
-                    })
-                    .catch(error => {
-                        console.log(error)
-                        this.errored = true
-                    })
-            })
-            .catch(error => {
-                console.log(error)
-                this.errored = true
-            })
-            .finally(() => this.loading = false)
     },
 
     methods: {
@@ -74,11 +32,6 @@ export default {
                 .then(response => {
                     this.films = response.data.results
                 })
-                .catch(error => {
-                    console.log(error)
-                    this.errored = true
-                })
-                .finally(() => this.loading = false)
         }
     }
 }

@@ -10,9 +10,12 @@
 
 
         <div v-else class="row">
+
             <div class="col-sm-6 col-md-4 col-xl-3 col-xxl-2 mx-auto" v-for="film in films" v-bind:key=film.id>
+
                 <router-link v-bind:to="'fiche-film?id=' + film.id" class="text-decoration-none">
-                    <div class="card mb-3 text-bg-light" style="height: 500px">
+
+                    <div class="card mb-3 text-bg-light overflow-hidden" style="height: 650px">
 
                         <!-- AFFICHE FILM -->
                         <img v-bind:src="preUrl + film.poster_path" alt="moviePoster" class="card-img-top"
@@ -22,7 +25,7 @@
 
                             <!-- TITRE FILM -->
                             <div class="card-title d-flex align-items-center justify-content-center"
-                                style="color: #750202;">
+                                style="color: #750202; height: 80px;">
 
                                 <h5 class="fw-bold text-uppercase m-0">{{
                                     film.title
@@ -40,9 +43,17 @@
                             </div>
 
                             <!-- RÉSUMÉ FILM -->
-                            <div class="card-text">
-                                {{ film.overview.slice(0, 150) + '...' }}
+                            <div class="card-text" style="height: 120px">
+                                {{ film.overview.slice(0, 200) + '...' }}
                             </div>
+
+                            <!-- DATE SORTIE FILM -->
+                            <div class="d-flex justify-content-center mx-auto gap-2 mt-2 fst-italic">(
+                                <p class="fw-bold">Date de sortie :</p>
+                                <p>{{ formatDate(film.release_date) }}
+                                </p>)
+                            </div>
+
                         </div>
                     </div>
                 </router-link>
@@ -52,23 +63,31 @@
 </template>
 
 <script>
+import moment from 'moment'
 
 export default {
     name: 'FilmsListe',
     props: [
         'films',
-        'errored',
-        'loading'
+        'loading',
+        'errored'
     ],
     data() {
         return {
-            preUrl: "https://image.tmdb.org/t/p/original/"
+            preUrl: "https://image.tmdb.org/t/p/original/",
+        };
+    },
+
+    methods: {
+        formatDate(value) {
+            return moment(value).format('Do MMMM YYYY');
         }
     }
 }
+
 </script>
 
-<style>
+<style scoped>
 .card {
     transition: 0.5s;
 }
