@@ -44,7 +44,7 @@ export default {
         axios
           .get('https://api.themoviedb.org/3/discover/movie?api_key=1ba19e5a213b1f39b7d58ab4aad6ebb5&language=fr&sort_by=vote_average.desc&include_adult=false&include_video=true&page=3&vote_count.gte=5000')
           .then(response => {
-            this.films = this.films.concat(response.data.results).slice(0, 50)
+            this.films = this.films.concat(response.data.results).splice(0, 50)
           })
           .catch(error => {
             console.log(error)
